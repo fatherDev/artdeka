@@ -1,0 +1,60 @@
+.l-example {
+  padding: 10vw 0;
+  background: color(dark);
+  color: white;
+
+  &__inner {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    padding: 0 16px;
+
+    @include media(tablet) {
+      flex-direction: row;
+      padding: 0 2.75rem;
+    }
+  }
+
+  svg {
+    width: 100%;
+    height: auto;
+    margin-top: 40px;
+
+    @include media(tablet) {
+      margin-top: 0;
+    }
+  }
+
+  &__col--left,
+  &__col--right {
+    width: 100%;
+    padding-left: 0;
+
+    @include media(tablet) {
+      width: 50%;
+      padding-left: 4rem;
+    }
+  }
+
+  &__content {
+    margin: 40px 0;
+
+    @include media(tablet) {
+      margin: 3vw 0;
+    }
+  }
+
+  .h-md.reveal-text {
+    line-height: unset;
+  }
+  .c-line-btn {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 1s $cubic;
+
+    &.is-inview {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}

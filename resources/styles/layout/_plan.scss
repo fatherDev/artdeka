@@ -1,0 +1,87 @@
+.l-plan {
+  padding: 10vw 0 0 0;
+  overflow: hidden;
+
+  &__inner {
+    position: relative;
+    padding: 0 16px;
+
+    @include media(tablet) {
+      padding: 0 6.75rem;
+    }
+  }
+
+  &__title {
+    margin-bottom: 10vw;
+    opacity: 0;
+    transform: translateY(40px);
+    @include transition(0.8s, $cubic);
+
+    &.is-inview {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  &__img {
+    position: absolute;
+    top: -50px;
+    right: -15vw;
+    height: 35vw;
+    opacity: 0.2;
+  }
+
+  &__row {
+    position: relative;
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      background: color(primary);
+      opacity: 0.05;
+    }
+
+    &:nth-of-type(1) {
+      &::before,
+      &:after {
+        top: -100px;
+        left: 0;
+        width: 75%;
+        height: 65%;
+      }
+
+      &::after {
+        transform: translateX(calc(-100% + 1px));
+      }
+    }
+
+    &:nth-of-type(2) {
+      &::before,
+      &::after {
+        top: -40px;
+        right: 0;
+        width: 60%;
+        height: 90%;
+      }
+
+      &::after {
+        transform: translateX(100%);
+      }
+    }
+
+    &:nth-of-type(3) {
+      &::before,
+      &::after {
+        top: -80px;
+        left: 0;
+        width: 55%;
+        height: 100%;
+      }
+
+      &::after {
+        transform: translateX(calc(-100% + 1px));
+      }
+    }
+  }
+}

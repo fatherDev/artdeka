@@ -1,0 +1,42 @@
+.l-hero {
+  display: flex;
+  align-items: center;
+  height: 100vh;
+}
+
+.hero-swiper {
+  height: 100vh;
+}
+
+.hero-pagination.swiper-pagination-fraction {
+  position: absolute;
+  bottom: 20px;
+  width: 45px;
+  text-align: end;
+  left: calc(100% - 61px);
+  font-family: font(secondary);
+  font-size: 24px;
+
+  @include media(tablet) {
+    left: 26%;
+    width: unset;
+    font-size: 1.5vw;
+  }
+}
+
+.hero-pagination__wrapper {
+  transition: all 1s $cubic 1s;
+  opacity: 0;
+  transform: translateY(20px);
+
+  &.is-inview {
+    opacity: 1;
+    transform: translateY(0);
+
+    &.is-delayed {
+      transition: all 1s $cubic 4s;
+      transform: translate(0);
+      opacity: 0.999;
+    }
+  }
+}

@@ -1,0 +1,9 @@
+.l-grid {
+  column-gap: 10px;
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+
+  @include media(tablet) {
+    column-gap: 30px;
+  }
+}

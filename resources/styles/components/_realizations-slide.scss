@@ -1,0 +1,30 @@
+.c-realizations-slide {
+  opacity: 0;
+  transform: translateX(100vw);
+  @include transition(2s, $cubic);
+
+  @for $i from 1 through 4 {
+    &:nth-of-type(#{$i}n) {
+      transition-delay: #{$i * 0.2}s;
+    }
+  }
+
+  &__img {
+    position: relative;
+    margin: 0;
+
+    img {
+      height: 350px;
+      width: 100%;
+      object-fit: cover;
+
+      @include media(tablet) {
+        height: 35vw;
+      }
+    }
+  }
+
+  &__title {
+    margin: 16px 0;
+  }
+}

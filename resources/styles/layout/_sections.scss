@@ -1,0 +1,11 @@
+.wp-block-group__inner-container {
+  @media (mobile) {
+    color: red;
+  }
+}
+
+.l-section {
+  @include media(tablet) {
+    min-height: 100vh;
+  }
+}

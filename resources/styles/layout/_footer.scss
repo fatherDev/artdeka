@@ -1,0 +1,159 @@
+.l-footer {
+  position: relative;
+  font-size: 16px !important;
+
+  &__head {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 16px;
+
+    @include media(tablet) {
+      flex-direction: row;
+      padding: 8vw 5rem;
+    }
+  }
+
+  &__box {
+    text-align: center;
+    margin-bottom: 30px;
+
+    &:nth-last-of-type(1) {
+      margin-bottom: 0;
+    }
+
+    @include media(tablet) {
+      margin-bottom: 0;
+    }
+
+    a {
+      @include transition(0.3s, $cubic);
+
+      &:hover {
+        color: color(primary);
+      }
+    }
+  }
+
+  &__box-wrapper {
+    display: flex;
+    align-items: center;
+    margin: 12px 0 0 0;
+
+    @include media(tablet) {
+      margin: 0 0 0 12px;
+    }
+
+    a:nth-of-type(1) {
+      margin-right: 12px;
+    }
+  }
+
+  &__box--middle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 60px;
+
+    @include media(tablet) {
+      padding-bottom: 0;
+    }
+
+    img {
+      margin-bottom: 12px;
+    }
+
+    p {
+      color: color(primary-dark);
+    }
+  }
+
+  &__box--right {
+    p {
+      color: color(text-medium);
+    }
+
+    .l-footer__box-inner {
+      justify-content: flex-end;
+
+      &:nth-of-type(1) {
+        flex-direction: column;
+
+        @include media(tablet) {
+          flex-direction: row;
+        }
+      }
+    }
+
+    a {
+      color: color(primary-dark);
+      @include transition(0.3s, $cubic);
+
+      &:hover {
+        color: color(primary);
+      }
+    }
+  }
+
+  &__box-inner {
+    display: flex;
+    align-items: center;
+    min-width: 250px;
+    margin-top: 10px;
+
+    &:nth-of-type(1) {
+      margin: 0;
+    }
+
+    a {
+      line-height: 1;
+    }
+
+    .prograffing {
+      margin-left: 12px;
+    }
+  }
+
+  &__box-inner--first {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    justify-content: center;
+    color: color(text-medium);
+
+    @include media(tablet) {
+      position: static;
+      transform: translate(0);
+    }
+  }
+
+  &__inner-wrapper {
+    position: relative;
+  }
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 16px;
+
+    @include media(tablet) {
+      flex-direction: row;
+      align-items: flex-end;
+      padding: 60px 2.75rem;
+    }
+  }
+
+  .title {
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: color(text-medium);
+
+    @include media(tablet) {
+      font-size: 1.1vw;
+    }
+  }
+}

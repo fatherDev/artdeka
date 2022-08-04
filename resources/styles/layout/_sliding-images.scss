@@ -1,0 +1,40 @@
+.l-sliding-images {
+  position: relative;
+  padding-top: 40px;
+
+  @include media(tablet) {
+    padding-top: 0;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: -5vw;
+    width: 55%;
+    height: 50vw;
+    background: color(primary);
+    opacity: 0.05;
+    pointer-events: none;
+  }
+
+  .c-sliding-img__container {
+    padding: 0 16px 240px 16px;
+
+    @include media(tablet) {
+      padding: 0 2.75rem 15vw 2.75rem;
+    }
+  }
+
+  .c-sliding-img__wrapper--left {
+    .c-sliding-img {
+      img {
+        width: 200px;
+
+        @include media(tablet) {
+          width: 30vw;
+        }
+      }
+    }
+  }
+}

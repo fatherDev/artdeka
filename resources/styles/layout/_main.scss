@@ -1,0 +1,27 @@
+/* ==========================================================================
+   Main content
+   ========================================================================== */
+* {
+  box-sizing: border-box;
+}
+
+html.has-scroll-smooth {
+  overflow: hidden;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+[data-scroll],
+[data-scroll-section] {
+  will-change: transform, opacity;
+}
+
+@include media(0, mobile) {
+  .l-main .l-inner-home {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}

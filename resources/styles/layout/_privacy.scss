@@ -1,0 +1,16 @@
+.l-privacy {
+  &__inner {
+    padding: 150px 16px 60px 16px;
+
+    @include media(tablet) {
+      padding: 150px 6.75rem;
+    }
+  }
+
+  .h-lg {
+    margin-bottom: 40px;
+  }
+
+  font-size: 20px;
+  line-height: 1.6;
+}

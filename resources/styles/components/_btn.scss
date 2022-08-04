@@ -1,0 +1,79 @@
+.c-main-btn {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  background: transparent;
+  border: 1px solid color(primary);
+  border-radius: 100%;
+  overflow: hidden;
+  @include transition(0.8s, $cubic);
+
+  @include media(tablet) {
+    width: 4.8vw;
+    height: 4.8vw;
+  }
+
+  .current,
+  .before {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    line-height: 0;
+    @include transition(0.8s, $cubic);
+
+    svg {
+      height: 8px;
+
+      @include media(tablet) {
+        height: unset;
+      }
+    }
+  }
+
+  .before {
+    left: -100%;
+  }
+
+  .current {
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &:hover {
+    .before {
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .current {
+      left: 150%;
+    }
+  }
+}
+
+.c-line-btn,
+.c-form-btn {
+  position: relative;
+  display: inline-block;
+  font-family: font(secondary);
+  text-transform: uppercase;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 1px;
+    width: 100%;
+    background: currentColor;
+    transform-origin: left;
+    transition: transform 0.4s $cubic;
+  }
+
+  &:hover::before {
+    transform: scaleX(0.3);
+  }
+}

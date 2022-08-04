@@ -1,0 +1,89 @@
+.l-about {
+  position: relative;
+  padding: 10vw 0;
+
+  &::after,
+  &::before {
+    content: '';
+    position: absolute;
+    background: color(primary);
+    opacity: 0.05;
+  }
+
+  &::after {
+    left: 0;
+    bottom: calc(100% - 450px);
+    height: 450px;
+    width: 40%;
+    z-index: -1;
+
+    @include media(tablet) {
+      bottom: 0;
+      height: 45vw;
+    }
+  }
+
+  &::before {
+    top: calc(100% - 40vw);
+    right: 0;
+    height: 40vw;
+    width: 50%;
+
+    @include media(tablet) {
+      top: 0;
+    }
+  }
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    padding: 0 16px;
+
+    @include media(tablet) {
+      flex-direction: row;
+      padding: 0 2.75rem;
+    }
+  }
+
+  &__btn {
+    margin-bottom: 40px;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 1s $cubic;
+
+    &.is-inview {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  &__col--left {
+    width: 100%;
+
+    @include media(tablet) {
+      width: 60%;
+    }
+  }
+
+  &__col--right {
+    width: 100%;
+
+    @include media(tablet) {
+      padding: 0 10vw 0 5vw;
+      width: 40%;
+    }
+
+    p {
+      padding: 3vw 0 40px 0;
+    }
+
+    svg {
+      height: 60px;
+      width: auto;
+
+      @include media(tablet) {
+        height: unset;
+      }
+    }
+  }
+}

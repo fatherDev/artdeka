@@ -1,0 +1,139 @@
+.l-more-info {
+  padding: 60px 0;
+  margin-bottom: 60px;
+  background: linear-gradient(312.13deg, #191b1a 0.25%, #0c271d 70.14%);
+  color: white;
+
+  @include media(tablet) {
+    padding: 6vw 0 10vw 0;
+    margin-bottom: 10vw;
+  }
+
+  &__inner {
+    padding: 0 16px;
+
+    @include media(tablet) {
+      padding: 0 2.75rem;
+    }
+  }
+
+  &__row {
+    position: relative;
+    display: flex;
+
+    &--middle {
+      padding-left: 0;
+      margin-bottom: 0;
+      align-items: center;
+
+      @include media(tablet) {
+        padding-left: 4rem;
+        margin-bottom: 80px;
+      }
+    }
+
+    &--bottom {
+      align-items: flex-end;
+      flex-direction: column;
+      padding: 60px 0 0 0;
+
+      @include media(tablet) {
+        flex-direction: row;
+        padding: 0 4rem;
+      }
+    }
+
+    .author {
+      width: 100%;
+      order: 1;
+
+      @include media(tablet) {
+        position: absolute;
+        top: 40px;
+        right: 5rem;
+        width: unset;
+      }
+    }
+  }
+
+  &__col {
+    width: 100%;
+
+    @include media(tablet) {
+      width: 50%;
+    }
+
+    img,
+    svg {
+      width: 100%;
+    }
+
+    img {
+      height: 400px;
+      object-fit: cover;
+
+      @include media(tablet) {
+        height: 85vh;
+        min-height: 650px;
+      }
+    }
+
+    &--right {
+      display: flex;
+      flex-direction: column;
+      padding-left: 0;
+
+      @include media(tablet) {
+        padding-left: 5vw;
+      }
+    }
+  }
+
+  &__btn {
+    order: 4;
+    margin: 40px auto 0 0;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 1s $cubic;
+
+    &.is-inview {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  &__desc {
+    order: 3;
+  }
+
+  &__img {
+    position: relative;
+    margin: 0 0 0 16px;
+
+    @include media(tablet) {
+      margin: 0;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      bottom: -16px;
+      left: -16px;
+      width: 95%;
+      height: 95%;
+      border: 3px solid color(text-medium);
+      z-index: -1;
+
+      @include media(tablet) {
+        bottom: -28px;
+        left: -24px;
+      }
+    }
+  }
+
+  .h-md.reveal-text {
+    line-height: unset;
+    padding-bottom: 40px;
+    order: 2;
+  }
+}

@@ -1,0 +1,124 @@
+.l-stages {
+  position: relative;
+  padding: 10vw 0;
+
+  &::before {
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    height: 77%;
+    width: 40%;
+    background: color(primary);
+    opacity: 0.05;
+    pointer-events: none;
+  }
+
+  &__inner {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 16px;
+
+    @include media(tablet) {
+      flex-direction: row;
+      padding-left: 6.75rem;
+    }
+
+    &.is-inview {
+      .stages-button-prev,
+      .stages-button-next {
+        visibility: visible;
+      }
+
+      .stages-button-next {
+        transform: translateY(0);
+      }
+
+      .stages-button-prev {
+        transform: rotate(180deg) translateY(0);
+      }
+
+      .stages-text-swiper {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .c-stage-img-slide__img-wrapper {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+  }
+
+  .stages-text-swiper,
+  .stages-img-swiper {
+    transition: all 1s $cubic;
+  }
+
+  .stages-text-swiper {
+    width: 100%;
+    opacity: 0;
+    padding-bottom: 100px;
+    transform: translateY(40px);
+
+    @include media(tablet) {
+      width: 40%;
+      padding-bottom: 0;
+    }
+  }
+
+  .stages-img-swiper {
+    width: 100%;
+
+    @include media(tablet) {
+      width: 60%;
+    }
+
+    .swiper-wrapper {
+      align-items: center;
+    }
+  }
+
+  &__button-wrapper {
+    position: absolute;
+    bottom: 50%;
+    transform: translateY(-50%);
+    left: 16px;
+    display: flex;
+    z-index: 1;
+
+    @include media(tablet) {
+      bottom: 0;
+      transform: translateY(0);
+      left: 6.75rem;
+    }
+  }
+}
+
+.stages-button-prev,
+.stages-button-next {
+  cursor: pointer;
+  visibility: hidden;
+  transform: translateY(40px);
+
+  &:disabled {
+    opacity: 0.3;
+    pointer-events: none;
+  }
+}
+
+.stages-button-prev {
+  transform: rotate(180deg) translateY(-40px);
+  transition-delay: 0.4s;
+  margin-right: 20px;
+
+  @include media(tablet) {
+    margin-right: 30px;
+  }
+}
+
+.stages-button-next {
+  transition-delay: 0.6s;
+}

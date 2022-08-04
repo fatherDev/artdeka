@@ -1,0 +1,43 @@
+.l-img-text-block {
+  padding: 10vw 0;
+
+  &__inner {
+    padding: 0 16px;
+
+    @include media(tablet) {
+      padding: 0 6.75rem;
+    }
+  }
+
+  .h-lg {
+    line-height: unset;
+    margin-bottom: 40px;
+
+    @include media(tablet) {
+      margin-bottom: 2vw;
+    }
+  }
+
+  .l-more-info__col--right {
+    @include media(tablet) {
+      padding-left: 6vw;
+    }
+  }
+
+  .l-more-info__row--middle {
+    flex-direction: column;
+    padding-left: 0;
+
+    @include media(tablet) {
+      flex-direction: row;
+    }
+  }
+
+  .l-more-info__img {
+    margin-bottom: 60px;
+
+    @include media(tablet) {
+      margin-bottom: 0;
+    }
+  }
+}

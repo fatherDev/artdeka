@@ -1,0 +1,18 @@
+.menu-item {
+  text-transform: uppercase;
+  font-family: font(secondary);
+  font-size: 28px;
+  @include transition(0.3s, $cubic);
+
+  @include media(tablet) {
+    font-size: 18px;
+  }
+
+  &:hover {
+    color: color(text-medium);
+  }
+
+  &.current-menu-item {
+    color: color(text-medium);
+  }
+}

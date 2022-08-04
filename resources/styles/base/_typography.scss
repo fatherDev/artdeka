@@ -1,0 +1,127 @@
+/* ==========================================================================
+   Typography
+   ========================================================================== */
+
+/* Global texts
+========================================================================== */
+html {
+  @include font-smoothing(on);
+
+  font-size: 16px;
+
+  @include media(tablet) {
+    font-size: font-size(main);
+  }
+}
+
+body {
+  font-family: font(main);
+  line-height: default(line-height);
+  color: color(main);
+  background: color(bg-light);
+
+  &.scroll-block {
+    overflow: hidden;
+  }
+}
+
+a {
+  cursor: pointer;
+  text-decoration: none;
+
+  color: currentColor;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+  font-weight: 400;
+}
+
+.t-upper {
+  text-transform: uppercase;
+}
+
+.t-center {
+  text-align: center;
+}
+
+.t-italic {
+  font-style: italic;
+}
+
+.t-font-secondary {
+  font-family: font(secondary);
+}
+
+.t-font-hand {
+  font-family: font(hand-writing);
+}
+
+.t-truncate {
+  //white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* number of lines to show */
+  -webkit-box-orient: vertical;
+}
+
+//HEADLINES
+.h-xxl {
+  font-size: 12vw;
+}
+
+.h-xl {
+  font-size: 40px;
+
+  @include media(tablet) {
+    font-size: 7.8vw;
+  }
+}
+
+.h-lg {
+  font-size: 40px;
+
+  @include media(tablet) {
+    font-size: 5.2vw;
+  }
+}
+
+.h-md {
+  font-size: 28px;
+
+  @include media(tablet) {
+    font-size: 3.3vw;
+  }
+}
+
+.h-xs {
+  font-size: 18px;
+
+  @include media(tablet) {
+    font-size: 1.5vw;
+  }
+}
+
+// Typography
+.t-typo-1 {
+  @include typo-1;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.visibility-hidden {
+  display: none;
+  visibility: hidden;
+}

@@ -1,0 +1,22 @@
+.c-scaling-line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  transform: scaleX(0);
+  transform-origin: left;
+  @include transition(1s, $cubic);
+
+  &.is-inview {
+    transform: scaleX(1);
+  }
+
+  &--dark {
+    background: color(dark);
+  }
+
+  &--light {
+    background: color(text-medium);
+  }
+}
